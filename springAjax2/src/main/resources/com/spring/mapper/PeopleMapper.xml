@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	 
+	 
+<mapper namespace="com.spring.mapper.PeopleMapper">
+
+	<!-- id는 Mapper.java( 여기선 MemberMapper.java )에 동일하게 사용해야 된다. -->
+	<select id="getPeopleList" resultType="PeopleVO" >
+		Select * from people order by id
+	</select> 
+	
+	<!-- hashMap에 있는 데이터 받기 collection : key -->
+	<insert id ="insertPeople" parameterType ="PeopleVO" >
+			INSERT INTO people VALUES 
+			( #{id}, #{name}, #{job}, #{address}, #{bloodtype}) 
+	</insert>  
+	
+	<delete id="deletePeople" parameterType="String">
+		DELETE FROM people where id = #{id}
+	</delete>
+	
+	<update id ="updatePeople" parameterType ="PeopleVO" >
+			UPDATE people SET name=#{name}, job=#{job}, address=#{address}, bloodtype=#{bloodtype} WHERE id=#{id}
+	</update>  
+	
+
+	
+	
+</mapper>
