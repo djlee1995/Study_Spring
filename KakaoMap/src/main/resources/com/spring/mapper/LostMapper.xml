@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.mapper.LostMapper">
+
+	<!-- <select id="getMembers" resultType="EmpVO">
+		SELECT * FROM emp order by deptno
+	</select> -->
+	<select id="place" resultType="LostVO">
+		SELECT * FROM place
+	</select>
+	<select id="lostlist" resultType="LostVO">
+		SELECT * FROM lost where loc=#{loc}
+	</select>
+	
+
+</mapper>
